@@ -23,7 +23,7 @@ const Auth = () => {
       toast.error("Password is required.");
       return false;
     }
-    if (password != confirmPassword) {
+    if (password !== confirmPassword) {
       toast.error("Password and confirm password does not match.");
       return false;
     }
@@ -35,7 +35,7 @@ const Auth = () => {
   const handleSignup = async () => {
     if (validateSignup()) {
       const response = await apiClient.post(SIGNUP_ROUTE, { email, password });
-      console.log(response);
+      console.log({ response });
     }
   };
 
